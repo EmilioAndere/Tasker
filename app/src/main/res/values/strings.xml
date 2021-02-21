@@ -1,0 +1,10 @@
+<resources>
+    <array name="estados">
+        <item>---Seleccione---</item>
+        <item>Nueva</item>
+        <item>En Proceso</item>
+        <item>Finalizada</item>
+    </array>
+
+    <string name="app_name">Taker</string>
+</resources>
