@@ -38,9 +38,22 @@ public class TareasActivity extends AppCompatActivity {
             TextView txvState = card.findViewById(R.id.txvState);
             ImageView imvPonits = card.findViewById(R.id.imvPonits);
             ImageView imvEye = card.findViewById(R.id.imvEye);
+            ImageView imvPrio = card.findViewById(R.id.imvpriority);
             txvTitle.setText(t[0]);
             txvState.setText(t[2]);
             txvId.setText(t[3]);
+            if(t[4].equals("Alta")){
+                imvPrio.setImageDrawable(getDrawable(R.drawable.ic_priority_high_black_18dp));
+            }
+            if(t[4].equals("Media")){
+                imvPrio.setImageDrawable(getDrawable(R.drawable.ic_warning_black_18dp));
+            }
+            if(t[4].equals("Baja")){
+                imvPrio.setImageDrawable(getDrawable(R.drawable.ic_where_to_vote_24px));
+            }
+
+
+            //imvPrio.setImageDrawable(getDrawable(R.drawable.ic_priority_high_black_18dp));
             imvPonits.setImageDrawable(getDrawable(R.drawable.ic_drag_indicator_24px));
             imvEye.setImageDrawable(getDrawable(R.drawable.ic_visibility_24px));
 

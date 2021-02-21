@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -17,6 +18,7 @@ public class MainActivity extends AppCompatActivity {
     private Button btnVer, btnAgregar;
     private EditText edtTitulo, edtDescripcion;
     private Spinner spnEstado;
+    private RadioButton rdbAlta, rdbMedia, rdbBaja;
     public ArrayList<String[]> lstTareas= new ArrayList<String[]>();
 
     @Override
@@ -41,6 +43,9 @@ public class MainActivity extends AppCompatActivity {
         edtTitulo = findViewById(R.id.edtTitulo);
         edtDescripcion = findViewById(R.id.edtDescription);
         spnEstado = findViewById(R.id.spnEstado);
+        rdbAlta=findViewById(R.id.rdbAlta);
+        rdbMedia=findViewById(R.id.rdbMedia);
+        rdbBaja=findViewById(R.id.rdbBaja);
         btnAgregar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -48,7 +53,19 @@ public class MainActivity extends AppCompatActivity {
                 String titulo = edtTitulo.getText().toString();
                 String descripcion = edtDescripcion.getText().toString();
                 String estado = (!spnEstado.equals("---Seleccione---")) ? spnEstado.getSelectedItem().toString() : "Sin titulo";
-                String[] tarea = {titulo, descripcion, estado, id};
+                String priority = "";
+                if(rdbAlta.isChecked()){
+                    priority = rdbAlta.getText().toString();
+                }
+                if(rdbMedia.isChecked()){
+                    priority = rdbMedia.getText().toString();
+                }
+                if(rdbBaja.isChecked()){
+                    priority = rdbBaja.getText().toString();
+                }
+
+                Toast.makeText(getApplicationContext(), priority, Toast.LENGTH_LONG).show();
+                String[] tarea = {titulo, descripcion, estado, id, priority};
                 lstTareas.add(tarea);
                 edtTitulo.setText("");
                 edtDescripcion.setText("");

@@ -15,7 +15,7 @@
             android:id="@+id/cardChild"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
+            android:layout_marginLeft="10dp"
             android:layout_marginTop="24dp"
             android:layout_marginBottom="10dp"
             app:cardBackgroundColor="@color/white"
@@ -27,11 +27,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="horizontal">
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical"></LinearLayout>
-
                 <ImageView
                     android:id="@+id/imvPonits"
                     android:layout_width="50dp"
@@ -42,6 +37,11 @@
                     android:layout_marginRight="10dp"
                     android:layout_marginBottom="20dp"
                     app:srcCompat="@drawable/ic_drag_indicator_24px" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"></LinearLayout>
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -80,14 +80,27 @@
                         android:layout_height="match_parent"
                         android:orientation="vertical">
 
-                        <TextView
-                            android:id="@+id/txvId"
+                        <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
-                            android:layout_marginTop="10dp"
-                            android:gravity="center_horizontal"
-                            android:text="1"
-                            android:textColor="@android:color/transparent" />
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:id="@+id/imvpriority"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_weight="1" />
+
+                            <TextView
+                                android:id="@+id/txvId"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginTop="10dp"
+                                android:drawablePadding="1dp"
+                                android:gravity="right|center_horizontal"
+                                android:text="1"
+                                android:textColor="@android:color/transparent" />
+                        </LinearLayout>
 
                         <ImageView
                             android:id="@+id/imvEye"
